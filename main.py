@@ -12,7 +12,6 @@ while running:
                 running = False
             tela.menu.click(event)
         
-        
         tela.mostra()
 
         pygame.display.flip()
