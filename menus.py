@@ -1,10 +1,14 @@
 import pygame
+import pandas as pd
+from tkinter import Tk
+from tkinter.filedialog import askopenfilename
+
 class Menu():
     def __init__(self):
         self.font = pygame.font.Font(None, 40)
         self.buttons = [
             {"text": "Jogar", "rect": pygame.Rect(300, 200, 350, 50), "action": self.start_game},
-            {"text": "Upload de Perguntas", "rect": pygame.Rect(300, 300, 350, 50), "action": self.quit_game},
+            {"text": "Upload de Perguntas", "rect": pygame.Rect(300, 300, 350, 50), "action": self.perguntas},
             {"text": "Sair", "rect": pygame.Rect(300, 400, 350, 50), "action": self.quit_game}
         ]
 
@@ -23,8 +27,10 @@ class Menu():
     def start_game(self):
         print("Iniciar o jogo...")
 
-    def options(self):
-        print("Abrir o menu de opções...")
+    def perguntas(self):
+        root = Tk()
+        root.withdraw()
+        nome_arquivo = askopenfilename(title="Selecione o arquivo CSV", filetypes=[("CSV files", "*.csv")])
 
     def quit_game(self):
         pygame.quit()

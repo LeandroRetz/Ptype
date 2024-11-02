@@ -10,7 +10,9 @@ while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-
+            tela.menu.click(event)
+        
+        
         tela.mostra()
 
         pygame.display.flip()
