@@ -11,7 +11,8 @@ while running:
             if event.type == pygame.QUIT:
                 running = False
 
-        tela.screen.blit(tela.imagem_de_fundo, (0, 0))
+        tela.mostra()
+
         pygame.display.flip()
 
         tela.clock.tick(60)
