@@ -5,12 +5,16 @@ class Pergunta():
     def __init__(self):
         self.pergunta = {"pergunta":["1","2","certa"]}
         self.arquivo = ''
-        self.df = pd.read_csv(self.arquivo, dtype=str)
+        self.df = pd.DataFrame()
 
     def leperguntas(self):
         root = Tk()
         root.withdraw()
         self.arquivo = askopenfilename(title="Selecione o arquivo CSV", filetypes=[("CSV files", "*.csv")])
 
-    def getPerguntas(index):
-        ...
+    def setdf(self):
+        self.df = pd.read_csv(self.arquivo, dtype=str)
+
+    def getPerguntas(self):
+        for row in self.df.iterrows():
+            print(row['Pergunta'])

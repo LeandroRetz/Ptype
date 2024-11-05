@@ -26,7 +26,8 @@ class Menu():
         print("Iniciar o jogo...")
 
     def perguntas(self):
-        Pergunta.leperguntas()
+        arquivoperguntas = Pergunta()
+        arquivoperguntas.leperguntas()
 
     def quit_game(self):
         pygame.quit()

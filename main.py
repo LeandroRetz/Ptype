@@ -1,3 +1,4 @@
+from pergunta import Pergunta
 from tela import Tela
 import pygame
 
@@ -17,5 +18,8 @@ while running:
         pygame.display.flip()
 
         tela.clock.tick(60)
+
+        pergunta = Pergunta()
+        pergunta.getPerguntas()
 
 pygame.quit()
