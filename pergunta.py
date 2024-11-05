@@ -14,7 +14,8 @@ class Pergunta():
 
     def setdf(self):
         self.df = pd.read_csv(self.arquivo, dtype=str)
+        print("Colunas carregadas:", self.df.columns)
 
     def getPerguntas(self):
-        for row in self.df.iterrows():
+        for index,row in self.df.iterrows():
             print(row['Pergunta'])
