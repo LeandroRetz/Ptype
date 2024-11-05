@@ -1,7 +1,5 @@
 import pygame
-import pandas as pd
-from tkinter import Tk
-from tkinter.filedialog import askopenfilename
+from pergunta import Pergunta
 
 class Menu():
     def __init__(self):
@@ -28,9 +26,7 @@ class Menu():
         print("Iniciar o jogo...")
 
     def perguntas(self):
-        root = Tk()
-        root.withdraw()
-        nome_arquivo = askopenfilename(title="Selecione o arquivo CSV", filetypes=[("CSV files", "*.csv")])
+        Pergunta.leperguntas()
 
     def quit_game(self):
         pygame.quit()
