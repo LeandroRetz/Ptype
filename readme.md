@@ -1,0 +1,3 @@
+# LIBS
+pandas
+pygame
