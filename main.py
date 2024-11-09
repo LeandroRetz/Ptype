@@ -7,19 +7,15 @@ pygame.init()
 tela = Tela()
 running = True
 while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        tela.menu.click(event)
 
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                running = False
-            tela.menu.click(event)
-        
-        tela.mostra()
 
-        pygame.display.flip()
+    tela.mostra()
 
-        tela.clock.tick(60)
-
-        pergunta = Pergunta()
-        pergunta.getPerguntas()
+    pygame.display.flip()
+    tela.clock.tick(60)
 
 pygame.quit()

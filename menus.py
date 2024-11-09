@@ -1,3 +1,4 @@
+
 import pygame
 from pergunta import Pergunta
 
@@ -9,10 +10,11 @@ class Menu():
             {"text": "Upload de Perguntas", "rect": pygame.Rect(300, 300, 350, 50), "action": self.perguntas},
             {"text": "Sair", "rect": pygame.Rect(300, 400, 350, 50), "action": self.quit_game}
         ]
+        self.game_state = "menu"
 
     def MostraBotao(self, surface):
         for button in self.buttons:
-            pygame.draw.rect(surface, (70,82,106), button["rect"])
+            pygame.draw.rect(surface, (70, 82, 106), button["rect"])
             text = self.font.render(button["text"], True, (255, 255, 255))
             surface.blit(text, (button["rect"].x + 50, button["rect"].y + 10))
 
@@ -23,7 +25,7 @@ class Menu():
                     button["action"]()
 
     def start_game(self):
-        print("Iniciar o jogo...")
+        self.game_state = "game"
 
     def perguntas(self):
         arquivoperguntas = Pergunta()
@@ -31,3 +33,4 @@ class Menu():
 
     def quit_game(self):
         pygame.quit()
+        exit()
