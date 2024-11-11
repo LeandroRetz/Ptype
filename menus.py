@@ -24,12 +24,15 @@ class Menu():
                 if button["rect"].collidepoint(event.pos):
                     button["action"]()
 
-    def start_game(self):
-        self.game_state = "game"
-
     def perguntas(self):
         arquivoperguntas = Pergunta()
         arquivoperguntas.leperguntas()
+        return True
+
+    def start_game(self):
+        self.game_state = "game"
+        
+
 
     def quit_game(self):
         pygame.quit()
