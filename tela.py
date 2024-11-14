@@ -23,9 +23,3 @@ class Tela:
     def mostraMenu(self):
         self.screen.blit(self.imagem_de_fundo, (0, 0))
         self.menu.MostraBotao(self.screen)
-
-    def mostraJogo(self):
-        self.screen.blit(self.imagem_de_fundo, (0, 0))
-        font = pygame.font.Font(None, 50)
-        text = font.render("Tela do Jogo", True, (255, 255, 255))
-        self.screen.blit(text, (300, 250))

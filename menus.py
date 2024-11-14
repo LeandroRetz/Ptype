@@ -1,4 +1,4 @@
-
+from game import Game
 import pygame
 from pergunta import Pergunta
 
@@ -31,6 +31,8 @@ class Menu():
 
     def start_game(self):
         self.game_state = "game"
+        game = Game()
+        game.rodajogo()
         
 
 
