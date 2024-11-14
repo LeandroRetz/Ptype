@@ -2,7 +2,7 @@ from game import Game
 import pygame
 from pergunta import Pergunta
 
-class Menu():
+class Menu:
     def __init__(self):
         self.font = pygame.font.Font(None, 40)
         self.buttons = [
@@ -11,6 +11,7 @@ class Menu():
             {"text": "Sair", "rect": pygame.Rect(300, 400, 350, 50), "action": self.quit_game}
         ]
         self.game_state = "menu"
+        self.arquivoperguntas = Pergunta()  # Instância de Pergunta
 
     def MostraBotao(self, surface):
         for button in self.buttons:
@@ -25,16 +26,13 @@ class Menu():
                     button["action"]()
 
     def perguntas(self):
-        arquivoperguntas = Pergunta()
-        arquivoperguntas.leperguntas()
+        self.arquivoperguntas.leperguntas()
         return True
 
     def start_game(self):
         self.game_state = "game"
-        game = Game()
+        game = Game(self.arquivoperguntas)  # Passa a instância de Pergunta para o jogo
         game.rodajogo()
-        
-
 
     def quit_game(self):
         pygame.quit()
