@@ -1,6 +1,6 @@
 '''
-Classe Enemy criada e implementada dentro do arquivo enemy.py. Precisa implementar ela na main em conjunto com o restante.
-Creio que dá pra ter uma ideia da coisa inicial.
+Classe Enemy criada e implementada dentro do arquivo enemy.py. 
+Precisa implementar ela na main em conjunto com o restante.
 '''
 
 import pygame
@@ -39,6 +39,7 @@ class Enemy:
         text_rect = text_surface.get_rect(center=(self.image_rect.centerx, self.image_rect.top - 20)) 
         screen.blit(text_surface, text_rect)
 
+    @staticmethod
     def spawn_new_enemies(screen_width, screen_height, enemy_image_path, size=(50, 50)):
         enemy_left_position = (100, 50)
         enemy_right_position = (screen_width - 150, 50)
