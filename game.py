@@ -36,7 +36,7 @@ class Game:
         running = True
         input_text = ""
         font = pygame.font.Font(None, 36)
-
+        speed_multiplier = 1.0
         while running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -49,10 +49,21 @@ class Game:
                             pergunta_data = self.pergunta_obj.get_pergunta_atual()
                             pergunta_text = pergunta_data["pergunta"]
                             respostas = pergunta_data["respostas"]
-                            enemies = Game.spawn_new_enemies(screen_width, screen_height, enemy_image_path, respostas)
+                            speed_multiplier += 0.5
+                        
+                            # Gera novos inimigos com a velocidade aumentada
+                            enemies = Game.spawn_new_enemies(
+                                screen_width, 
+                                screen_height, 
+                                enemy_image_path, 
+                                respostas
+                            )
+                            for enemy in enemies:
+                                enemy.speed *= speed_multiplier
                         else:
                             print(f"Incorreto! '{input_text}' não é a resposta certa.")
-                            input_text = ""
+                        
+                        input_text = ""
                     elif event.key == pygame.K_BACKSPACE:
                         input_text = input_text[:-1]
                     else:
