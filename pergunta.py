@@ -24,9 +24,13 @@ class Pergunta:
         self.setdf()
 
     def get_pergunta_atual(self):
-        # Retorna a pergunta e respostas atuais
+        # Retorna a pergunta, respostas e a resposta correta
         if self.perguntas:
-            return self.perguntas[self.current_index]
+            return {
+                "pergunta": self.perguntas[self.current_index]["pergunta"],
+                "respostas": self.perguntas[self.current_index]["respostas"],
+                "certo": self.df.iloc[self.current_index]["certo"]
+            }
         return None
 
     def proxima_pergunta(self):

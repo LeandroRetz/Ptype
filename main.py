@@ -1,6 +1,6 @@
-from tela import Tela
 import pygame
-from game import Game
+from tela import Tela
+
 pygame.init()
 
 tela = Tela()
@@ -12,12 +12,7 @@ while running:
             running = False
         tela.menu.click(event)
 
-    if tela.menu.game_state == "menu":
-        tela.mostraMenu()
-    elif tela.menu.game_state == "game":
-        Game.rodajogo()
-        tela.menu.game_state = "menu"    
-    
+    tela.mostra()
     pygame.display.flip()
     tela.clock.tick(60)
 

@@ -22,4 +22,4 @@ class Tela:
 
     def mostraMenu(self):
         self.screen.blit(self.imagem_de_fundo, (0, 0))
-        self.menu.MostraBotao(self.screen)
+        self.menu.mostrar_botoes(self.screen)
