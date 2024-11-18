@@ -43,7 +43,7 @@ class Game:
                     running = False
                 elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_RETURN:
-                        if input_text == pergunta_data["certo"]:  # Verifica se a entrada é igual à resposta correta
+                        if input_text == pergunta_data["certo"]: 
                             print(f"Correto! '{input_text}' é a resposta certa.")
                             self.pergunta_obj.proxima_pergunta()
                             pergunta_data = self.pergunta_obj.get_pergunta_atual()

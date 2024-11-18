@@ -12,9 +12,7 @@ class Player:
 
 
     def draw(self, screen, question):
-        """
-        Desenha o jogador na tela e exibe a pergunta abaixo dele.
-        """
+  
         screen.blit(self.image, self.image_rect)  
 
         
@@ -23,9 +21,7 @@ class Player:
         screen.blit(question_surface, question_rect)
 
     def check_collision(self, enemies):
-        """
-        Verifica colisão entre o jogador e os inimigos.
-        """
+
         for enemy in enemies:
             if self.image_rect.colliderect(enemy.image_rect):
                 return True  

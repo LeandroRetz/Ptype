@@ -6,8 +6,8 @@ class Pergunta:
     def __init__(self):
         self.arquivo = ''
         self.df = pd.DataFrame()
-        self.perguntas = []  # Lista para armazenar perguntas
-        self.current_index = 0  # Índice para rastrear a pergunta atual
+        self.perguntas = []  
+        self.current_index = 0  
 
     def setdf(self):
         self.df = pd.read_csv(self.arquivo, dtype=str)
@@ -24,7 +24,7 @@ class Pergunta:
         self.setdf()
 
     def get_pergunta_atual(self):
-        # Retorna a pergunta, respostas e a resposta correta
+        
         if self.perguntas:
             return {
                 "pergunta": self.perguntas[self.current_index]["pergunta"],
@@ -34,5 +34,5 @@ class Pergunta:
         return None
 
     def proxima_pergunta(self):
-        # Avança para a próxima pergunta
+        
         self.current_index = (self.current_index + 1) % len(self.perguntas)
