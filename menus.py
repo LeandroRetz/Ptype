@@ -12,7 +12,7 @@ class Menu:
             {"text": "Sair", "rect": pygame.Rect(300, 400, 350, 50), "action": self.quit_game}
         ]
         self.game_state = "menu"
-        self.pergunta_obj = Pergunta()
+
 
     def mostrar_botoes(self, surface):
         for button in self.buttons:
