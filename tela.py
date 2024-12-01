@@ -8,7 +8,7 @@ class Tela:
     largura = 720
     screen = pygame.display.set_mode((altura, largura))
     clock = pygame.time.Clock()
-    imagem_de_fundo = pygame.image.load("plano de fundo.png")
+    imagem_de_fundo = pygame.image.load("images/backgroundimage.png")
     pygame.transform.scale(imagem_de_fundo, (largura, altura))
 
     def __init__(self):
